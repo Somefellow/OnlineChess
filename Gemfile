@@ -67,6 +67,7 @@ group :development do
 
   gem 'rubocop'
   gem 'rubocop-rails'
+  gem 'solargraph'
 end
 
 group :test do
