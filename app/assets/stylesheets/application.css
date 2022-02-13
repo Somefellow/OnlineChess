@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+@font-face {
+    font-family: 'Chess';
+    src: url('CHEQ_TT.TTF');
+}
+
+.chess {
+    font-family: 'Chess';
+}
