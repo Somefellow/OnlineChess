@@ -12,11 +12,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_220_212_160_946) do
+ActiveRecord::Schema[7.0].define(version: 20_220_216_105_120) do
+  create_table 'chess_matches', force: :cascade do |t|
+    t.string 'fen'
+    t.string 'active_player'
+    t.string 'winning_player'
+    t.integer 'white_player_id'
+    t.integer 'black_player_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['black_player_id'], name: 'index_chess_matches_on_black_player_id'
+    t.index ['white_player_id'], name: 'index_chess_matches_on_white_player_id'
+  end
+
   create_table 'users', force: :cascade do |t|
     t.string 'username'
     t.string 'password_digest'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
+
+  add_foreign_key 'chess_matches', 'users', column: 'black_player_id'
+  add_foreign_key 'chess_matches', 'users', column: 'white_player_id'
 end
