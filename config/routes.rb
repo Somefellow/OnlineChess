@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   # Users routes
   resources :users, only: %i[new create edit update show destroy]
 
+  # ChessMatchs routes
+  resources :chess_matches, only: %i[show]
+
   # Sessions routes
   get '/login', to: 'sessions#login'
   post '/login', to: 'sessions#create'
