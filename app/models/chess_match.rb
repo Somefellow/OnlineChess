@@ -12,7 +12,7 @@ class ChessMatch < ApplicationRecord
   end
 
   def to_utf8
-    simple_format(chess_game.board.to_s.gsub(/\e\[([;\d]+)?m/, '').chars.map(&:to_utf8).join)
+    simple_format(chess_game.board.to_s.gsub(/\e\[([;\d]+)?m/, '').chars.map.with_index { |c, i| i < 150 ? c.to_utf8 : c }.join.gsub(' ', '&nbsp;'))
   end
 
   def player_in_game?(user)

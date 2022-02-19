@@ -23,6 +23,10 @@
     font-family: 'Chess';
 }
 
+.chess_board {
+  font-family: 'Courier New', monospace;
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
     /*background-color: #333;*/
