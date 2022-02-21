@@ -1,4 +1,16 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# == Schema Information
+#
+# Table name: chess_matches
+#
+#  id              :integer          not null, primary key
+#  fen             :string
+#  active_player   :string
+#  winning_player  :string
+#  white_player_id :integer
+#  black_player_id :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 
 # This model initially had no columns defined. If you add columns to the
 # model remove the "{}" from the fixture names and add the columns immediately
