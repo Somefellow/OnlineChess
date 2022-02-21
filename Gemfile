@@ -80,3 +80,4 @@ group :test do
 end
 
 gem 'chess'
+gem 'net-http'
