@@ -33,6 +33,6 @@ class ChessMatch < ApplicationRecord
   end
 
   def my_turn?(user = current_user)
-    user.username
+    (white_player_id == user.id && active_player == :white.to_s) || (black_player_id == user.id && active_player == :black.to_s)
   end
 end
